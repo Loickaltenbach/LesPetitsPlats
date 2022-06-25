@@ -1,0 +1,19 @@
+{
+  "name": "lespetitsplats",
+  "version": "1.0.0",
+  "description": "Project #7 Lespetits plats",
+  "main": "scripts/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "sass --watch ./scss/style.scss:./css/style.css --style expanded"
+  },
+  "keywords": [
+    "P7",
+    "algoritms",
+    "lespetitsplats"
+  ],
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^5.1.3"
+  }
+}
