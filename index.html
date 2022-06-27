@@ -1,69 +1,64 @@
 <!DOCTYPE html>
 <html lang="fr">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="icon" type="image/svg" sizes="16x16" href="./assets/Vector.svg"/>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-        <link rel="stylesheet" href="style.css" />
-        <title> Les Petits Plats</title>
-    </head>
-    <body>
-		<header>
-			<img src="./assets/logo.png" alt="logo Les Petits Plats">
-		</header>
-      <form onsubmit="return false">
-          <div class="input-recherche">
-              <input type="text" id="barreRecherche" placeholder="Rechercher un ingrédient, appareil, ustensiles ou une recette">
-              <i class="fas fa-search fa-2x" aria-hidden="true"></i>
+
+  <head>
+    
+    <meta charset="utf-8">
+
+    <!--My styles-->
+    <link href="style/style.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="style/style.css" />
+    <link rel="icon" type="image/svg" href="images/logo.svg" />
+
+    <!--Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Roboto&display=swap" rel="stylesheet">
+
+    <title>Les petits plats</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+  </head>
+  <body> 
+    <div class="container">
+      <nav class="navbar navbar-expand">
+        <a class="navbar-brand mx-auto mb-1" href="#">
+          <img src="images/logo.svg" alt="logo" class="w-75">
+        </a>
+      </nav>
+      <section id='search-section' class="row">
+        <div class="col-12 form-group">
+          <input type="text" class="form-control bg-light p-3 border-0" id="searchInput" placeholder="Rechercher un ingrédient, appareil, ustensiles ou une recette"  aria-label="Recipient's username" aria-describedby="basic-addon2">
+        </div>
+      </section>
+      <section id="tags-section" class="row mt-3">
+        <div class="col-12 tags-col">
+
+        </div>
+      </section>
+      <section id='sorting-section' class="row mt-3">
+       
+
+        <div class="col-12 flex">
+
+          <div id='ingredients' class='sort-select col-lg-2 col-md-3'>
+            <input type="text" placeholder="Ingredients" value=''>
+            <ul class='sort-list column-8'>
+            
+            </ul>
           </div>
-          <div class="alert alert-warning" role="alert"> Aucune recette ne correspond à votre critère... vous pouvez chercher "tarte aux pommes", "poisson" etc. </div>
-          <div id="ensembleTag">
+
+          <div id='appareil' class='sort-select col-lg-2 col-md-3'>
+            <input type="text" placeholder="Appareil" value=''>
+            <ul class='sort-list column-3'>
+             
+            </ul>
           </div>
-          <div class="groupe-filtre">
-              <div class="filtre-btn ingredient">
-                  <div class="btn-group">
-                      <button type="button" id="btnIngredient" class="btn btn-primary ingredient">
-                      Ingrédients
-                      </button>
-                      <button type="button" id="btnIngredientFleche" class="btn btn-primary dropdown-toggle dropdown-toggle-split ingredient" data-toggle="collapse" data-target="#collapseIngredient" aria-haspopup="true" aria-expanded="false" aria-controls="collapseIngredient">
-                          <span class="sr-only"> Ingrédients </span>
-                      </button>
-                  </div>
-                  <div class="collapse container" id="collapseIngredient" role="tabpanel" aria-expanded="true">
-                      <div class="row ingredient">
-                      </div>
-                  </div>
-              </div>
-              <div class="filtre-btn appareil">
-                  <div class="btn-group">
-                      <button type="button" id="btnAppareil" class="btn btn-primary appareil">
-                      Appareils
-                      </button>
-                      <button type="button" id="btnAppareilFleche" class="btn btn-primary dropdown-toggle dropdown-toggle-split appareil" data-toggle="collapse" data-target="#collapseAppareil" aria-haspopup="true" aria-expanded="false" aria-controls="collapseAppareil">
-                          <span class="sr-only"> Appareils </span>
-                      </button>
-                  </div>
-                  <div class="collapse" id="collapseAppareil">
-                      <div class="row sansMarge appareil">
-                      </div>
-                  </div>
-              </div>
-              <div class="filtre-btn ustensile">
-                  <div class="btn-group">
-                      <button type="button" id="btnUstensile" class="btn btn-primary ustensile">
-                      Ustensiles
-                      </button>
-                      <button type="button" id="btnUstensileFleche" class="btn btn-primary dropdown-toggle dropdown-toggle-split ustensile" data-toggle="collapse" data-target="#collapseUstensile" aria-haspopup="true" aria-expanded="false" aria-controls="collapseUstensile">
-                          <span class="sr-only"> Ustensiles </span>
-                      </button>
-                  </div>
-                  <div class="collapse" id="collapseUstensile">
-                      <div class="row sansMarge ustensile">
-                      </div>
-                  </div>
-              </div>
+
+          <div id='ustensiles' class='sort-select col-lg-2 col-md-3'>
+            <input type="text" placeholder="Ustensiles" value=''>
+            <ul class='sort-list column-3'>
+             
+            </ul>
           </div>
 
         </div>
