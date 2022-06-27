@@ -22381,9 +22381,6 @@ dd:after {
 .sort-select input::placeholder {
   color: #fff;
 }
-.sort-select input:focus {
-  border-color: #fff;
-}
 .sort-select .sort-list {
   display: none;
   position: absolute;
