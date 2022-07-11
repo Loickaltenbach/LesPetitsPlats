@@ -33,15 +33,8 @@ class init{
 
     sortSelect(recipes){
         let selectIds = document.querySelectorAll('.sort-select')
-        // console.log(this.mySelect)
 
-        
-        
-        
-       
-        
         selectIds.forEach((elem, i) => {
-            // let myObj = '1'
             this.mySelect[i].inputTextOnFilter(recipes, this.mySelect)
         })
     }
@@ -77,9 +70,9 @@ class init{
             that.hiddenNullMessage()
             
             if(searchInput.value.length >= 3){
-                that.mySelect[0].removeList()
-                that.mySelect[1].removeList()
-                that.mySelect[2].removeList()
+                // that.mySelect[0].removeList()
+                // that.mySelect[1].removeList()
+                // that.mySelect[2].removeList()
                 that.searchSortedCards = []
                 that.removeCards()
 
@@ -212,7 +205,7 @@ class init{
                 that.displayData(recipes)
                 
                 that.mySelect.forEach((select)=>{
-                    select.removeList()
+                    // select.removeList()
                     select.setListToDOM(recipes)
                     select.quantityChangeEvent()
                     
@@ -330,7 +323,6 @@ class init{
                     ustensilesFound = true
                 }
             }
-            //  console.log(ingredientFound, appareilFound, ustensilesFound)
             
             if(ingredientFound && appareilFound && ustensilesFound){
                 sortedRecipesTmp.push(recipes[i])
@@ -352,10 +344,9 @@ class init{
 
         // change lists of the filters
         this.mySelect.forEach((select)=>{
-            select.removeList()
+            //select.removeList()
             select.setListToDOM(sortedRecipes)
             select.quantityChangeEvent()
-            
        })
     }
 
@@ -372,15 +363,13 @@ class init{
                     tags = document.querySelectorAll('.tag')
 
                     let tagText = e.target.parentElement.getAttribute('data-tag')
-                    let dataType = e.target.parentElement.getAttribute('data-type')
-                    // let items
 
                     function findItem(items, sample){
-                        // items.forEach((item)=>{
-                        //     if(item.textContent.replace(/\s+/g, '') == sample){
-                        //         item.classList.remove('noclick')
-                        //     }
-                        // })
+                        items.forEach((item)=>{
+                            if(item.textContent.replace(/\s+/g, '') == sample){
+                                item.classList.remove('noclick')
+                            }
+                        })
                         let myIndex
                         
                         myIndex = items.indexOf(sample)
@@ -405,21 +394,21 @@ class init{
                     }else{
                         that.removeCards()
                         if(that.searchSortedCards.length != 0){
-                            // if somithing is inputed in searchInput
+                            // if something is inputed in searchInput
                             that.displayData(that.searchSortedCards)
 
                             // change lists of the filters
                             that.mySelect.forEach((select)=>{
-                                select.removeList()
+                                //select.removeList()
                                 select.setListToDOM(that.searchSortedCards)
                                 select.quantityChangeEvent()
                                     
                             })
                         }else{
-                            // if nothing is not inputed in searchInput
+                            // if nothing is inputed in searchInput
                             that.displayData(recipes)
                             that.mySelect.forEach((select)=>{
-                                select.removeList()
+                                //select.removeList()
                                 select.setListToDOM(recipes)
                                 select.quantityChangeEvent()
                                     
@@ -438,20 +427,20 @@ class init{
         }
     }
 
-    // filterBlur(){
-    //     let allInputs = document.querySelectorAll('.sort-select input')
-    //     let selectId
+    filterBlur(){
+        let allInputs = document.querySelectorAll('.sort-select input')
 
-    //     allInputs.forEach((myInput)=> {
-    //         myInput.addEventListener('blur', (e)=>{
-    //             selectId = e.target.parentNode.id
+        allInputs.forEach((myInput)=> {
+            myInput.addEventListener('blur', (e)=>{
+                let selectId
+                selectId = e.target.parentNode.id
                 
-    //             e.target.value = ''
-    //             e.target.parentNode.classList.remove('active')
+                e.target.value = ''
+                e.target.parentNode.classList.remove('active')
                 
-    //         })
-    //     })
-    // }
+            })
+        })
+    }
 
     filterItemClick(){
         let that = this
@@ -471,14 +460,13 @@ class init{
                     e.target.parentNode.parentNode.querySelector('input').value = ''
 
                     //close select
-                    // e.target.parentNode.parentNode.classList.remove('active')
+                    e.target.parentNode.parentNode.classList.remove('active')
                         
                 
 
                     tagData['filterId'] = e.target.parentElement.parentElement.id
-                    // tagData['filterItemValue'] = e.target.innerHTML
+                    tagData['filterItemValue'] = e.target.innerHTML
                     tagData['filterItemValue'] = e.target.getAttribute('data-tag')
-                    // console.log(tagData['filterItemValue'])
                     let newTag = new tagTemplate(tagData)
                     tagsContainer.appendChild(newTag.getTagDOM())
                     that.createCardsListBasedOnTags()

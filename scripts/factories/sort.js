@@ -24,9 +24,9 @@ class sortSelectTemplate{
 
        input.addEventListener('click', function(){
 
-        // allSelects.forEach((select)=>{
-        //     select.querySelector('input').value = ''
-        // })
+        allSelects.forEach((select)=>{
+            select.querySelector('input').value = ''
+        })
 
         if(that.select.classList.contains('active')){
             that.select.classList.remove('active')
@@ -231,12 +231,10 @@ class sortSelectTemplate{
                 
             }
             else{
-                    
-                
-                    allSelects.forEach((mySelect)=>{
-                        mySelect.removeList()
-                        mySelect.setListToDOM(myRecipes)
-                    })
+                allSelects.forEach((mySelect)=>{
+                    mySelect.removeList()
+                    mySelect.setListToDOM(myRecipes)
+                })
 
             }
             allSelects.forEach((mySelect)=>{
@@ -266,34 +264,34 @@ class sortSelectTemplate{
         target.forEach((filter) => {
 
             myCount = filter.children.length
-            // console.log(myCount)
+
             if(myCount >= 0 && myCount < 7){
-                // console.log('test1')
+
                 that.deleteCSSClassesColumn(filter)
                 filter.classList.add('column-1')
             }
             else if(myCount >= 7 && myCount < 15){
-                // console.log('test1')
+                
                 that.deleteCSSClassesColumn(filter)
                 filter.classList.add('column-2')
             }
             else if(myCount >= 15 && myCount < 25){
-                // console.log('test2')
+                
                 that.deleteCSSClassesColumn(filter)
                 filter.classList.add('column-3')
                 }
             else if(myCount >= 25 && myCount < 40){
-                // console.log('test2')
+                
                 that.deleteCSSClassesColumn(filter)
                 filter.classList.add('column-4')
                 }
             else if(myCount >= 40 && myCount < 80){
-                // console.log('test3')
+                
                 that.deleteCSSClassesColumn(filter)
                 filter.classList.add('column-5')
             }
             else if(myCount >= 80){
-                // console.log('test4')
+                
                 that.deleteCSSClassesColumn(filter)
                 filter.classList.add('column-8')
             }
