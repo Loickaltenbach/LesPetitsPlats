@@ -70,9 +70,9 @@ class init{
             that.hiddenNullMessage()
             
             if(searchInput.value.length >= 3){
-                // that.mySelect[0].removeList()
-                // that.mySelect[1].removeList()
-                // that.mySelect[2].removeList()
+                that.mySelect[0].removeList()
+                that.mySelect[1].removeList()
+                that.mySelect[2].removeList()
                 that.searchSortedCards = []
                 that.removeCards()
 
@@ -205,7 +205,7 @@ class init{
                 that.displayData(recipes)
                 
                 that.mySelect.forEach((select)=>{
-                    // select.removeList()
+                    select.removeList()
                     select.setListToDOM(recipes)
                     select.quantityChangeEvent()
                     
@@ -344,7 +344,7 @@ class init{
 
         // change lists of the filters
         this.mySelect.forEach((select)=>{
-            //select.removeList()
+            select.removeList()
             select.setListToDOM(sortedRecipes)
             select.quantityChangeEvent()
        })
@@ -399,7 +399,7 @@ class init{
 
                             // change lists of the filters
                             that.mySelect.forEach((select)=>{
-                                //select.removeList()
+                                select.removeList()
                                 select.setListToDOM(that.searchSortedCards)
                                 select.quantityChangeEvent()
                                     
@@ -408,7 +408,7 @@ class init{
                             // if nothing is inputed in searchInput
                             that.displayData(recipes)
                             that.mySelect.forEach((select)=>{
-                                //select.removeList()
+                                select.removeList()
                                 select.setListToDOM(recipes)
                                 select.quantityChangeEvent()
                                     
