@@ -1,4 +1,4 @@
-class init{
+class Init{
     constructor(){
         this.mySelect = []
         this.searchSortedCards = []
@@ -20,7 +20,6 @@ class init{
             this.mySelect[i] = new selectFactory(elem.id)
             this.mySelect[i].openSelect()
         })
-      
     }
 
     //clear values of filter's inputs
@@ -34,7 +33,7 @@ class init{
     sortSelect(recipes){
         let selectIds = document.querySelectorAll('.sort-select')
 
-        selectIds.forEach((elem, i) => {
+        selectIds.forEach((_elem, i) => {
             this.mySelect[i].inputTextOnFilter(recipes, this.mySelect)
         })
     }
@@ -385,7 +384,6 @@ class init{
         }
 
         if(!eventActive){
-            eventActive = true
             document.querySelector('.tags-col').addEventListener('click', listener, false)
         }
     }
@@ -395,9 +393,6 @@ class init{
 
         allInputs.forEach((myInput)=> {
             myInput.addEventListener('blur', (e)=>{
-                let selectId
-                selectId = e.target.parentNode.id
-                
                 e.target.value = ''
                 e.target.parentNode.classList.remove('active')
                 
@@ -411,10 +406,7 @@ class init{
         let tagsContainer = document.querySelector('#tags-section .tags-col')
         let eventActive = false
         if(!eventActive){
-            eventActive = true
             document.addEventListener('click', (e)=>{
-
-               
 
                 let targetDataTagAttr = e.target.getAttribute('data-tag')
                 if(e.target.parentElement.classList.contains('sort-list')){
@@ -450,7 +442,7 @@ class init{
     }
 }
 
-let myInit = new init()
+let myInit = new Init()
 
 myInit.displayData(recipes)
 myInit.displaySelect()

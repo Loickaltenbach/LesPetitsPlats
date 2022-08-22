@@ -8,7 +8,7 @@ class selectFactory{
             case "ustensiles":
                 return new ustensilesSelectTemplate(id)
             default:
-                throw 'Unknown select type'
+                return 'Unknown select type'
         }
     }
 }

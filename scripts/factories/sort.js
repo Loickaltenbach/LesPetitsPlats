@@ -258,7 +258,7 @@ class sortSelectTemplate{
     quantityChangeEvent(){
         
         let that = this
-        var target = document.querySelectorAll('.sort-list')
+        let target = document.querySelectorAll('.sort-list')
         let myCount
        
         target.forEach((filter) => {
